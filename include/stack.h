@@ -11,6 +11,7 @@
  */
 
 #include <stdbool.h>
+#include <stdio.h>
 
 #ifndef STACK_H
 #define STACK_H
@@ -29,7 +30,7 @@ void push(Stack *s, float value);
 float pop(Stack *s);
 bool is_stack_empty(Stack *s);
 float peek(Stack *s); // aka top or front
-void dup(Stack *s);
+void dump(Stack *s);
 void swap(Stack *s);
 void clear(Stack *s);
 

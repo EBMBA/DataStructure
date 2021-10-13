@@ -28,13 +28,42 @@ float test(int a) {
 
 }
 
+void test_Stack(Stack *s){
+
+}
+
 
 /*
  * 
  */
 int main(int argc, char** argv) {
 
-
+    Stack stackVar;
+    init_stack(&stackVar);
+    push(&stackVar, 5.4);
+    //printf("%f\n",pop(&stackVar));
+    if (is_stack_empty(&stackVar) == true)
+    {
+        printf("True\n");
+    }
+    else {
+        printf("False\n");
+    }
+    printf("%f\n",peek(&stackVar));
+    push(&stackVar, 7.5);
+    printf("%f\n",peek(&stackVar));
+    swap(&stackVar);
+    printf("%f\n",peek(&stackVar));
+    dump(&stackVar);
+    printf("%f\n",peek(&stackVar));
+    clear(&stackVar);
+     if (is_stack_empty(&stackVar) == true)
+    {
+        printf("True\n");
+    }
+    else {
+        printf("False\n");
+    }
 
     return (EXIT_SUCCESS);
 }

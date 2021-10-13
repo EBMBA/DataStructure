@@ -16,7 +16,7 @@
 #include <string.h>
 #include <assert.h>
 
-#include "stack.h"
+#include "../include/stack.h"
 
 float test(int a) {
     errno = a;

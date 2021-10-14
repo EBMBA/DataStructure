@@ -17,16 +17,17 @@
 #include <assert.h>
 
 #include "../include/stack.h"
+#include "../include/queue.h"
 
-float test(int a) {
-    errno = a;
-    assert(a == 5);
-    int errnum = errno;
-    fprintf(stderr, "Value of errno: %d\n", errnum);
-    perror("Error printed by perror");
-    fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
+// float test(int a) {
+//     errno = a;
+//     assert(a == 5);
+//     int errnum = errno;
+//     fprintf(stderr, "Value of errno: %d\n", errnum);
+//     perror("Error printed by perror");
+//     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
 
-}
+// }
 
 void test_Stack(Stack *s){
 
@@ -65,6 +66,14 @@ int main(int argc, char** argv) {
         printf("False\n");
     }
 
+    Queue *q = (Queue *) malloc(sizeof(Queue));
+    
+    init_queue(q);
+    enqueue(q,2.5);
+    enqueue(q,1.5);
+    printf("\n%.2f",q->data[0]);
+    float r = dequeue(q);
+    printf("\n%.2f",r);
     return (EXIT_SUCCESS);
 }
 

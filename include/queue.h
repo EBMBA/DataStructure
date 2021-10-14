@@ -24,7 +24,7 @@ typedef struct {
 } Queue;
 
 
-#endif /* QUEUE_H */
+
 
 void init_queue(Queue *s);
 void enqueue(Queue *q, float value);
@@ -32,5 +32,7 @@ float dequeue(Queue *q);
 
 bool is_queue_empty(Queue *q);
 float front(Queue *q); //aka peek
-//void clear(Queue *q);
+void clear_queue(Queue *q);
 
+
+#endif /* QUEUE_H */

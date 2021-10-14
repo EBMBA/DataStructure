@@ -38,7 +38,7 @@ void test_Stack(Stack *s){
  * 
  */
 int main(int argc, char** argv) {
-
+/*
     Stack stackVar;
     init_stack(&stackVar);
     push(&stackVar, 5.4);
@@ -65,15 +65,21 @@ int main(int argc, char** argv) {
     else {
         printf("False\n");
     }
-
+*/
     Queue *q = (Queue *) malloc(sizeof(Queue));
     
     init_queue(q);
+    assert(q->index == 0);
     enqueue(q,2.5);
     enqueue(q,1.5);
-    printf("\n%.2f",q->data[0]);
+    enqueue(q,4.5);
+    printf("\nAvant dequeu%.2f / %d",q->data[0], q->index);
     float r = dequeue(q);
+    printf("\n1ere Valeur apres dequeu%.2f",q->data[0]);
     printf("\n%.2f",r);
+    printf("\nfront : %.2f",front(q));
+    clear_queue(q);
+    printf("\nApres clear%.2f / %d\n",q->data[0], q->index);
     return (EXIT_SUCCESS);
 }
 

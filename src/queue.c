@@ -13,8 +13,7 @@ void init_queue(Queue *s){
     s->index=0;
     for (int i = 0; i < QUEUE_MAX_SIZE ; i++)
     {
-        s->data[i] = 0.0;
-        s->index++;
+        s->data[i] = 0.0;     
     }
 }
 
@@ -25,6 +24,7 @@ void enqueue(Queue *q, float value){
         if (q->data[i] == 0.0)
         {
             q->data[i] = value;
+            q->index++;
             break;
         }
     }
@@ -32,7 +32,7 @@ void enqueue(Queue *q, float value){
 
 float dequeue(Queue *q){
     float tampon = q->data[0];
-    for (int i = 0; i < q->index ; i++)
+    for (int i = 0; i < QUEUE_MAX_SIZE ; i++)
     {
         
         q->data[i] = q->data[i+1];
@@ -47,4 +47,7 @@ bool is_queue_empty(Queue *q){
 float front(Queue *q){
     float val = q->data[0];
     return val;
+}
+void clear_queue(Queue *q){
+    init_queue(q);
 }

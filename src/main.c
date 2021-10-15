@@ -18,16 +18,8 @@
 #include <CUnit/CUnit.h>
 #include "../include/stack.h"
 #include "../include/queue.h"
-
-// float test(int a) {
-//     errno = a;
-//     assert(a == 5);
-//     int errnum = errno;
-//     fprintf(stderr, "Value of errno: %d\n", errnum);
-//     perror("Error printed by perror");
-//     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
-
-// }
+#include "../include/array_list.h"
+#include "../include/heap.h"
 
 void test_Stack(){
     Stack stackVar;
@@ -55,7 +47,7 @@ void test_Stack(){
     clear(&stackVar);
     assert(stackVar.index == 0);
 }
-*/
+
 int test_cleanup(void)
 {
 	return 0;
@@ -112,40 +104,15 @@ void test_Array_List(){
 
     insert_at(&list, 1, 4);
     assert(list.data[1] == 4);
-/*
- * 
- */
-int main(int argc, char** argv) {
-/*
-    Stack stackVar;
-    init_stack(&stackVar);
-    push(&stackVar, 5.4);
-    //printf("%f\n",pop(&stackVar));
-    if (is_stack_empty(&stackVar) == true)
-    {
-        printf("True\n");
-    }
-    else {
-        printf("False\n");
-    }
-    printf("%f\n",peek(&stackVar));
-    push(&stackVar, 7.5);
-    printf("%f\n",peek(&stackVar));
-    swap(&stackVar);
-    printf("%f\n",peek(&stackVar));
-    dump(&stackVar);
-    printf("%f\n",peek(&stackVar));
-    clear(&stackVar);
-     if (is_stack_empty(&stackVar) == true)
-    {
-        printf("True\n");
-    }
-    else {
-        printf("False\n");
-    }
-*/
-    
-    
+
+    float varGet = get_at(&list, 0);
+    assert(varGet == 4);
+
+    clear_list(&list);
+    assert(list.index == 0);
+} 
+
+int main(int argc, char** argv) {  
     //test_Queue();
     CU_initialize_registry();
 	CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
@@ -155,23 +122,5 @@ int main(int argc, char** argv) {
 	//CU_add_test(suite, "test_heap", test_heap);
 	CU_basic_run_tests();
 
-    float varGet = get_at(&list, 0);
-    assert(varGet == 4);
 
-    clear_list(&list);
-    assert(list.index == 0);
 }
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-
-    
-    //test_Stack();
-    //test_Queue();
-    //test_Array_List();
-    return (EXIT_SUCCESS);
-	return (0);
-}
-

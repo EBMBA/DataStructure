@@ -15,7 +15,7 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
-
+#include <CUnit/Basic.h>
 #include "../include/stack.h"
 #include "../include/queue.h"
 
@@ -28,9 +28,28 @@
 //     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
 
 // }
-
+/*
 void test_Stack(Stack *s){
 
+}
+*/
+void test_Queue(){
+    Queue *q = (Queue *) malloc(sizeof(Queue));
+    init_queue(q);
+    assert(q->index ==0);
+    assert(q->data[0] == 0.0);
+    enqueue(q,2.5);
+    enqueue(q,1.5);
+    enqueue(q,4.5);
+    assert(q->data[0] == 2.5);
+    assert(q->data[1] == 1.5);
+    assert(q->data[2] == 4.5);
+    assert(dequeue(q) == 2.5);
+    assert(q->data[0] == 1.5);
+    clear_queue(q);
+    assert(q->index ==0);
+    assert(q->data[0] == 0.0);
+    
 }
 
 
@@ -66,20 +85,9 @@ int main(int argc, char** argv) {
         printf("False\n");
     }
 */
-    Queue *q = (Queue *) malloc(sizeof(Queue));
     
-    init_queue(q);
-    assert(q->index == 0);
-    enqueue(q,2.5);
-    enqueue(q,1.5);
-    enqueue(q,4.5);
-    printf("\nAvant dequeu%.2f / %d",q->data[0], q->index);
-    float r = dequeue(q);
-    printf("\n1ere Valeur apres dequeu%.2f",q->data[0]);
-    printf("\n%.2f",r);
-    printf("\nfront : %.2f",front(q));
-    clear_queue(q);
-    printf("\nApres clear%.2f / %d\n",q->data[0], q->index);
+    
+    test_Queue();
     return (EXIT_SUCCESS);
 }
 

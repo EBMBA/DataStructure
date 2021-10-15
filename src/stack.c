@@ -6,6 +6,11 @@
 
 #include "../include/stack.h"
 
+/**
+ * @brief Initialise la pile 
+ * 
+ * @param s Pile à initialiser
+ */
 void init_stack(Stack *s){
     s->index = 0;
     for (int i = 0; i < STACK_MAX_SIZE; i++)
@@ -19,6 +24,12 @@ void push(Stack *s, float value){
     s->index ++;
 }
 
+/**
+ * @brief Supprime la dernière valeur de la pile 
+ * 
+ * @param s Pile 
+ * @return float Retourne la valeur supprimé 
+ */
 float pop(Stack *s){
     float valRemove = 0.0;
     if (s->index > 0)
@@ -35,6 +46,13 @@ float pop(Stack *s){
     return valRemove;
 }
 
+/**
+ * @brief Retourne un booléen, true si la pile est vide 
+ * 
+ * @param s Pile à traiter
+ * @return true  pile vide 
+ * @return false pile pas vide
+ */
 bool is_stack_empty(Stack *s){
     bool empty = true;
     
@@ -46,6 +64,12 @@ bool is_stack_empty(Stack *s){
     return empty; 
 }
 
+/**
+ * @brief Renvoi le dernier 
+ * 
+ * @param s Pile à traiter
+ * @return float dernier élément de la pile 
+ */
 float peek(Stack *s){
     float lastElement = 0.0;
     if (s->index > 0)
@@ -55,6 +79,11 @@ float peek(Stack *s){
     return lastElement;
 }
 
+/**
+ * @brief Supprime le dernier élément 
+ * 
+ * @param s Pile à traiter 
+ */
 void dump(Stack *s){
     if (s->index > 0)
     {
@@ -66,6 +95,11 @@ void dump(Stack *s){
     }
 }
 
+/**
+ * @brief Echange le dernier et l'avant dernier 
+ * 
+ * @param s Pile à traiter 
+ */
 void swap(Stack *s){
     if (s->index > 0)
     {
@@ -75,6 +109,11 @@ void swap(Stack *s){
     }
 }
 
+/**
+ * @brief 
+ * 
+ * @param s 
+ */
 void clear(Stack *s){
     do
     {

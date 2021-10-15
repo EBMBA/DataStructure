@@ -18,6 +18,7 @@
 
 #include "../include/stack.h"
 #include "../include/queue.h"
+#include "../include/array_list.h"
 
 // float test(int a) {
 //     errno = a;
@@ -65,7 +66,7 @@ int main(int argc, char** argv) {
     else {
         printf("False\n");
     }
-*/
+
     Queue *q = (Queue *) malloc(sizeof(Queue));
     
     init_queue(q);
@@ -80,6 +81,53 @@ int main(int argc, char** argv) {
     printf("\nfront : %.2f",front(q));
     clear_queue(q);
     printf("\nApres clear%.2f / %d\n",q->data[0], q->index);
+    */
+
+    Array_list l;
+    init_array_list(&l);
+    
+    printf("\n");
+    printf("Add\n");
+    for (int i = 0; i <= 20; i++)
+    {
+        add(&l,100);
+    }
+
+    for (int i = 0; i < l.index -1 ; i++)
+    {
+        printf("%f - %d\n", get_at(&l,i), i);
+    }
+    
+    printf("\n");
+    printf("Insert\n");
+    insert_at(&l, 18, 19);
+    insert_at(&l, 19, 50);
+    insert_at(&l, 14, 9999);
+    insert_at(&l, 15, 8888);
+    insert_at(&l, 16, 7777);
+    for (int i = 0; i < l.index -1 ; i++)
+    {
+        printf("%f - %d\n", get_at(&l,i), i);
+    }
+
+    printf("\n");
+    printf("Remove\n");
+    remove_at(&l, 15);
+    for (int i = 0; i < l.index -1 ; i++)
+    {
+        printf("%f - %d\n", get_at(&l,i), i);
+    }
+
+    printf("\n");
+    printf("Clear\n");
+    clear_list(&l);
+    for (int i = 0; i < l.index -1 ; i++)
+    {
+        printf("%f - %d\n", get_at(&l,i), i);
+    }
+
+
+
     return (EXIT_SUCCESS);
 }
 

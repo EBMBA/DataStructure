@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.c
- * Author: aurelio
- *
+/**
+ * @file main.c
+ * @author Kubilay KAPLAN & Emile METRAL
+ * @brief 
+ * @version 0.1
+ * @date 2021-10-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdio.h>
@@ -16,9 +15,9 @@
 #include <string.h>
 #include <assert.h>
 #include <CUnit/Basic.h>
+#include <CUnit/CUnit.h>
 #include "../include/stack.h"
 #include "../include/queue.h"
-#include "../include/array_list.h"
 
 // float test(int a) {
 //     errno = a;
@@ -34,22 +33,45 @@ void test_Stack(Stack *s){
 
 }
 */
+int test_cleanup(void)
+{
+	return 0;
+}
+
+int test_init(void)
+{
+	return 0;
+}
+
+/**
+ * @brief test de la data structure queue
+ * 
+ */
 void test_Queue(){
     Queue *q = (Queue *) malloc(sizeof(Queue));
     init_queue(q);
-    assert(q->index ==0);
-    assert(q->data[0] == 0.0);
+    CU_ASSERT(q->index ==0);
+    // assert(q->index ==0);
+    // assert(q->data[0] == 0.0);
+    CU_ASSERT(q->data[0] == 0.0);
     enqueue(q,2.5);
     enqueue(q,1.5);
     enqueue(q,4.5);
-    assert(q->data[0] == 2.5);
-    assert(q->data[1] == 1.5);
-    assert(q->data[2] == 4.5);
-    assert(dequeue(q) == 2.5);
-    assert(q->data[0] == 1.5);
+    CU_ASSERT(q->data[0] == 2.5);
+    CU_ASSERT(q->data[1] == 1.5);
+    CU_ASSERT(q->data[2] == 4.5);
+    // assert(q->data[0] == 2.5);
+    // assert(q->data[1] == 1.5);
+    // assert(q->data[2] == 4.5);
+    // assert(dequeue(q) == 2.5);
+    CU_ASSERT(dequeue(q) == 2.5);
+    // assert(q->data[0] == 1.5);
+    CU_ASSERT(q->data[0] == 1.5);
     clear_queue(q);
-    assert(q->index ==0);
-    assert(q->data[0] == 0.0);
+    // assert(q->index ==0);
+    // assert(q->data[0] == 0.0);
+    CU_ASSERT(q->data[0] == 0.0);
+    CU_ASSERT(q->index == 0);
     
 }
 
@@ -85,71 +107,18 @@ int main(int argc, char** argv) {
     else {
         printf("False\n");
     }
-
-    Queue *q = (Queue *) malloc(sizeof(Queue));
 */
     
-    init_queue(q);
-    assert(q->index == 0);
-    enqueue(q,2.5);
-    enqueue(q,1.5);
-    enqueue(q,4.5);
-    printf("\nAvant dequeu%.2f / %d",q->data[0], q->index);
-    float r = dequeue(q);
-    printf("\n1ere Valeur apres dequeu%.2f",q->data[0]);
-    printf("\n%.2f",r);
-    printf("\nfront : %.2f",front(q));
-    clear_queue(q);
-    printf("\nApres clear%.2f / %d\n",q->data[0], q->index);
-    */
-
-    Array_list l;
-    init_array_list(&l);
     
-    printf("\n");
-    printf("Add\n");
-    for (int i = 0; i <= 20; i++)
-    {
-        add(&l,100);
-    }
+    //test_Queue();
+    CU_initialize_registry();
+	CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
+	//CU_add_test(suite, "test_list", test_array_list);
+	CU_add_test(suite, "test_Queue", test_Queue);
+	//CU_add_test(suite, "test_queue", test_stack);
+	//CU_add_test(suite, "test_heap", test_heap);
+	CU_basic_run_tests();
 
-    for (int i = 0; i < l.index -1 ; i++)
-    {
-        printf("%f - %d\n", get_at(&l,i), i);
-    }
-    
-    printf("\n");
-    printf("Insert\n");
-    insert_at(&l, 18, 19);
-    insert_at(&l, 19, 50);
-    insert_at(&l, 14, 9999);
-    insert_at(&l, 15, 8888);
-    insert_at(&l, 16, 7777);
-    for (int i = 0; i < l.index -1 ; i++)
-    {
-        printf("%f - %d\n", get_at(&l,i), i);
-    }
-
-    printf("\n");
-    printf("Remove\n");
-    remove_at(&l, 15);
-    for (int i = 0; i < l.index -1 ; i++)
-    {
-        printf("%f - %d\n", get_at(&l,i), i);
-    }
-
-    printf("\n");
-    printf("Clear\n");
-    clear_list(&l);
-    for (int i = 0; i < l.index -1 ; i++)
-    {
-        printf("%f - %d\n", get_at(&l,i), i);
-    }
-
-
-
-    
-    test_Queue();
-    return (EXIT_SUCCESS);
+	return (0);
 }
 

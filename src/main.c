@@ -21,33 +21,6 @@
 #include "../include/array_list.h"
 #include "../include/heap.h"
 
-void test_Stack(){
-    Stack stackVar;
-    init_stack(&stackVar);
-    assert(stackVar.index == 0);
-
-    push(&stackVar, 5);
-    assert(stackVar.data[0] == 5);
-    
-    bool empty = is_stack_empty(&stackVar);
-    assert(empty == false);
-
-
-    float varStack = peek(&stackVar);
-    assert(varStack == 5);
-
-    push(&stackVar, 19);
-    varStack = pop(&stackVar);
-    assert(varStack==19);
-    
-    dump(&stackVar);
-    varStack = peek(&stackVar);
-    assert(varStack == 5);
-    
-    clear(&stackVar);
-    assert(stackVar.index == 0);
-}
-
 int test_cleanup(void)
 {
 	return 0;
@@ -57,6 +30,38 @@ int test_init(void)
 {
 	return 0;
 }
+
+/**
+ * @brief 
+ * 
+ */
+void test_Stack(){
+    Stack stackVar;
+    init_stack(&stackVar);
+    CU_ASSERT(stackVar.index == 0);
+
+    push(&stackVar, 5);
+    CU_ASSERT(stackVar.data[0] == 5);
+    
+    bool empty = is_stack_empty(&stackVar);
+    CU_ASSERT(empty == false);
+
+
+    float varStack = peek(&stackVar);
+    CU_ASSERT(varStack == 5);
+
+    push(&stackVar, 19);
+    varStack = pop(&stackVar);
+    CU_ASSERT(varStack==19);
+    
+    dump(&stackVar);
+    varStack = peek(&stackVar);
+    CU_ASSERT(varStack == 5);
+    
+    clear(&stackVar);
+    CU_ASSERT(stackVar.index == 0);
+}
+
 
 /**
  * @brief test de la data structure queue
@@ -91,36 +96,81 @@ void test_Queue(){
     
 }
 
+/**
+ * @brief 
+ * 
+ */
 void test_Array_List(){
     Array_list list;
 
     init_array_list(&list);
-    assert(list.index == 0);
+    CU_ASSERT(list.index == 0);
 
     add(&list, 85);
-    assert(list.data[0] == 85);
+    CU_ASSERT(list.data[0] == 85);
     add(&list, 85);
     add(&list, 85);
 
     insert_at(&list, 1, 4);
-    assert(list.data[1] == 4);
+    CU_ASSERT(list.data[1] == 4);
 
     float varGet = get_at(&list, 0);
-    assert(varGet == 4);
+    CU_ASSERT(varGet == 4);
 
     clear_list(&list);
-    assert(list.index == 0);
+    CU_ASSERT(list.index == 0);
 } 
 
+void test_Heap(){
+    Heap heap;
+    init_heap(&heap);
+    //CU_ASSERT(heap.index == 0);
+
+    push_heap(&heap, 5);
+    
+    
+    //CU_ASSERT(heap.data[0] == 5);    
+    push_heap(&heap, 25.0);
+    push_heap(&heap, 18.0);
+    push_heap(&heap, (float)2);
+    heap.data[0]=5;
+    for (int i = 0; i < heap.index; i++)
+    {
+        printf(" %f \n",heap.data[i]);
+    }
+
+    float popedVar = pop_heap(&heap);
+    //CU_ASSERT(popedVar == 5);
+
+    //CU_ASSERT(peek_heap(&heap) == 2 );
+
+    //CU_ASSERT(is_heap_empty(&heap) == false);
+
+    //CU_ASSERT(replace(&heap, 5) == 2);
+    //CU_ASSERT(peek_heap(&heap) == 2 );
+    
+    clear_heap(&heap);
+    //CU_ASSERT(heap.index == 0);
+    //8 tests
+    /*
+        1. src/main.c:130  - heap.data[0] == 5
+    2. src/main.c:136  - popedVar == 5
+    3. src/main.c:138  - peek_heap(&heap) == 2
+    4. src/main.c:142  - replace(&heap, 5) == 2
+    5. src/main.c:143  - peek_heap(&heap) == 2
+    */
+}
+
 int main(int argc, char** argv) {  
-    //test_Queue();
-    CU_initialize_registry();
-	CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
-	//CU_add_test(suite, "test_list", test_array_list);
-	CU_add_test(suite, "test_Queue", test_Queue);
-	//CU_add_test(suite, "test_queue", test_stack);
-	//CU_add_test(suite, "test_heap", test_heap);
-	CU_basic_run_tests();
+   //test_Queue();
+    //CU_initialize_registry();
+	//CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
+	//CU_add_test(suite, "test_list", test_Array_List);
+	//CU_add_test(suite, "test_Queue", test_Queue);
+	//CU_add_test(suite, "test_queue", test_Stack);
+	//CU_add_test(suite, "test_heap", test_Heap);
+	//CU_basic_run_tests();
 
-
+    test_Heap();
+   
 }

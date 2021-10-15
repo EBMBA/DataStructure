@@ -28,9 +28,32 @@
 //     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
 
 // }
-/*
-void test_Stack(Stack *s){
 
+void test_Stack(){
+    Stack stackVar;
+    init_stack(&stackVar);
+    assert(stackVar.index == 0);
+
+    push(&stackVar, 5);
+    assert(stackVar.data[0] == 5);
+    
+    bool empty = is_stack_empty(&stackVar);
+    assert(empty == false);
+
+
+    float varStack = peek(&stackVar);
+    assert(varStack == 5);
+
+    push(&stackVar, 19);
+    varStack = pop(&stackVar);
+    assert(varStack==19);
+    
+    dump(&stackVar);
+    varStack = peek(&stackVar);
+    assert(varStack == 5);
+    
+    clear(&stackVar);
+    assert(stackVar.index == 0);
 }
 */
 int test_cleanup(void)
@@ -47,6 +70,7 @@ int test_init(void)
  * @brief test de la data structure queue
  * 
  */
+
 void test_Queue(){
     Queue *q = (Queue *) malloc(sizeof(Queue));
     init_queue(q);
@@ -75,7 +99,19 @@ void test_Queue(){
     
 }
 
+void test_Array_List(){
+    Array_list list;
 
+    init_array_list(&list);
+    assert(list.index == 0);
+
+    add(&list, 85);
+    assert(list.data[0] == 85);
+    add(&list, 85);
+    add(&list, 85);
+
+    insert_at(&list, 1, 4);
+    assert(list.data[1] == 4);
 /*
  * 
  */
@@ -119,6 +155,23 @@ int main(int argc, char** argv) {
 	//CU_add_test(suite, "test_heap", test_heap);
 	CU_basic_run_tests();
 
+    float varGet = get_at(&list, 0);
+    assert(varGet == 4);
+
+    clear_list(&list);
+    assert(list.index == 0);
+}
+
+/*
+ * 
+ */
+int main(int argc, char** argv) {
+
+    
+    //test_Stack();
+    //test_Queue();
+    //test_Array_List();
+    return (EXIT_SUCCESS);
 	return (0);
 }
 

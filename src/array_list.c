@@ -120,7 +120,7 @@ float get_at(Array_list *l,int position){
     float valueToGet = 0.0;
     if (position <= l->index)
     {
-        int i = l->index - 1;
+        int i = l->index;
         while (i != position)
         {
             valueToGet = l->data[i];

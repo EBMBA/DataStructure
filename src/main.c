@@ -15,7 +15,7 @@
 #include <errno.h>
 #include <string.h>
 #include <assert.h>
-
+#include <CUnit/Basic.h>
 #include "../include/stack.h"
 #include "../include/queue.h"
 #include "../include/array_list.h"
@@ -29,9 +29,28 @@
 //     fprintf(stderr, "Error opening file: %s\n", strerror(errnum));
 
 // }
-
+/*
 void test_Stack(Stack *s){
 
+}
+*/
+void test_Queue(){
+    Queue *q = (Queue *) malloc(sizeof(Queue));
+    init_queue(q);
+    assert(q->index ==0);
+    assert(q->data[0] == 0.0);
+    enqueue(q,2.5);
+    enqueue(q,1.5);
+    enqueue(q,4.5);
+    assert(q->data[0] == 2.5);
+    assert(q->data[1] == 1.5);
+    assert(q->data[2] == 4.5);
+    assert(dequeue(q) == 2.5);
+    assert(q->data[0] == 1.5);
+    clear_queue(q);
+    assert(q->index ==0);
+    assert(q->data[0] == 0.0);
+    
 }
 
 
@@ -68,6 +87,7 @@ int main(int argc, char** argv) {
     }
 
     Queue *q = (Queue *) malloc(sizeof(Queue));
+*/
     
     init_queue(q);
     assert(q->index == 0);
@@ -128,6 +148,8 @@ int main(int argc, char** argv) {
 
 
 
+    
+    test_Queue();
     return (EXIT_SUCCESS);
 }
 

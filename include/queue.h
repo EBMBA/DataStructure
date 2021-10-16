@@ -1,13 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   queue.h
- * Author: aurelio
- *
+/**
+ * @file queue.h
+ * @author Kubilay KAPLAN & Emile METRAL
+ * @brief 
+ * @version 0.1
+ * @date 2021-10-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include <stdbool.h>

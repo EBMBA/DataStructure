@@ -1,7 +1,7 @@
 /**
  * @file queue.c
  * @author Kubilay KAPLAN & Emile METRAL
- * @brief 
+ * @brief functions for queue
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -14,9 +14,9 @@
 #include "../include/queue.h"
 
 /**
- * @brief Init queue
+ * @brief initialize a new queue
  * 
- * @param s : queue to init
+ * @param s : queue address to init
  */
 void init_queue(Queue *s){
     s->index=0;
@@ -27,19 +27,19 @@ void init_queue(Queue *s){
 }
 
 /**
- * @brief add value
+ * @brief add value to queue
  * 
- * @param q queue to use
+ * @param q queue address to be treated
  * @param value value to add
  */
 void enqueue(Queue *q, float value){
-
+    q->index = QUEUE_MAX_SIZE;
     for (int i = 0; i < QUEUE_MAX_SIZE ; i++)
     {
         if (q->data[i] == 0.0)
         {
             q->data[i] = value;
-            q->index++;
+            
             break;
         }
     }
@@ -48,34 +48,33 @@ void enqueue(Queue *q, float value){
 /**
  * @brief delete first value and return it
  * 
- * @param q queue a retourner
- * @return float 
+ * @param q queue address to be treated
+ * @return float return deleted value
  */
 float dequeue(Queue *q){
     float tampon = q->data[0];
     for (int i = 0; i < QUEUE_MAX_SIZE ; i++)
     {
-        
         q->data[i] = q->data[i+1];
     }
     return tampon;
 }
 
 /**
- * @brief si queue est vide ou pas
+ * @brief queue is empty or not
  * 
- * @param q queue a traiter
- * @return true 
- * @return false 
- */
+ * @param q queue address to be treated
+ * @return true : queue is empty
+ * @return false : queue is not empty
+*/
 bool is_queue_empty(Queue *q){
     return q->index == 0;
 }
 
 /**
- * @brief affiche la premiere valeur de queue
+ * @brief display the first queue value
  * 
- * @param q queue a traiter
+ * @param q queue address to be treated
  * @return float 
  */
 float front(Queue *q){
@@ -84,9 +83,9 @@ float front(Queue *q){
 }
 
 /**
- * @brief reinitialise queue
+ * @brief clear queue
  * 
- * @param q queue a traiter
+ * @param q queue address to be treated
  */
 void clear_queue(Queue *q){
     init_queue(q);

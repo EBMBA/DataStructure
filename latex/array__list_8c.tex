@@ -1,0 +1,151 @@
+\hypertarget{array__list_8c}{}\doxysection{src/array\+\_\+list.c File Reference}
+\label{array__list_8c}\index{src/array\_list.c@{src/array\_list.c}}
+
+
+functions for array list  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../include/array\+\_\+list.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{array__list_8c_a6ec00aaed68440b991b26dd13fec510c}{init\+\_\+array\+\_\+list}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em initialize array list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array__list_8c_ade6797971e903ae5baf44e7bde807bbd}{insert\+\_\+at}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l, int position, float value)
+\begin{DoxyCompactList}\small\item\em Insert value at a define position in array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array__list_8c_ae5e4ec918c6b6997d6b04ef540d56d3a}{add}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l, float value)
+\begin{DoxyCompactList}\small\item\em Add a value at the end of the list. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{array__list_8c_a3916b04721e25076e491304d7ea7e3ce}{remove\+\_\+at}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l, int position)
+\begin{DoxyCompactList}\small\item\em Remove an item from the list at a specific position. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{array__list_8c_a9983c477beb4bf5e1edd69acaf650dd6}{get\+\_\+at}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l, int position)
+\begin{DoxyCompactList}\small\item\em Return the list item to position n. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{array__list_8c_a513cb4ac4ce78d1ede618dfb346151c8}{clear\+\_\+list}} (\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Removes all values ​​from the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+functions for array list 
+
+\begin{DoxyAuthor}{Author}
+Kubilay KAPLAN \& Emile METRAL 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/10-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{array__list_8c_ae5e4ec918c6b6997d6b04ef540d56d3a}\label{array__list_8c_ae5e4ec918c6b6997d6b04ef540d56d3a}} 
+\index{array\_list.c@{array\_list.c}!add@{add}}
+\index{add@{add}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Add a value at the end of the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+{\em value} & Value to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array__list_8c_a513cb4ac4ce78d1ede618dfb346151c8}\label{array__list_8c_a513cb4ac4ce78d1ede618dfb346151c8}} 
+\index{array\_list.c@{array\_list.c}!clear\_list@{clear\_list}}
+\index{clear\_list@{clear\_list}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{clear\_list()}{clear\_list()}}
+{\footnotesize\ttfamily void clear\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Removes all values ​​from the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array__list_8c_a9983c477beb4bf5e1edd69acaf650dd6}\label{array__list_8c_a9983c477beb4bf5e1edd69acaf650dd6}} 
+\index{array\_list.c@{array\_list.c}!get\_at@{get\_at}}
+\index{get\_at@{get\_at}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{get\_at()}{get\_at()}}
+{\footnotesize\ttfamily float get\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l,  }\item[{int}]{position }\end{DoxyParamCaption})}
+
+
+
+Return the list item to position n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+{\em position} & Element position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{array__list_8c_a6ec00aaed68440b991b26dd13fec510c}\label{array__list_8c_a6ec00aaed68440b991b26dd13fec510c}} 
+\index{array\_list.c@{array\_list.c}!init\_array\_list@{init\_array\_list}}
+\index{init\_array\_list@{init\_array\_list}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{init\_array\_list()}{init\_array\_list()}}
+{\footnotesize\ttfamily void init\+\_\+array\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+initialize array list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array__list_8c_ade6797971e903ae5baf44e7bde807bbd}\label{array__list_8c_ade6797971e903ae5baf44e7bde807bbd}} 
+\index{array\_list.c@{array\_list.c}!insert\_at@{insert\_at}}
+\index{insert\_at@{insert\_at}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{insert\_at()}{insert\_at()}}
+{\footnotesize\ttfamily void insert\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l,  }\item[{int}]{position,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Insert value at a define position in array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+{\em position} & Position of the element to add \\
+\hline
+{\em value} & Value to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{array__list_8c_a3916b04721e25076e491304d7ea7e3ce}\label{array__list_8c_a3916b04721e25076e491304d7ea7e3ce}} 
+\index{array\_list.c@{array\_list.c}!remove\_at@{remove\_at}}
+\index{remove\_at@{remove\_at}!array\_list.c@{array\_list.c}}
+\doxysubsubsection{\texorpdfstring{remove\_at()}{remove\_at()}}
+{\footnotesize\ttfamily float remove\+\_\+at (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structArray__list}{Array\+\_\+list}} $\ast$}]{l,  }\item[{int}]{position }\end{DoxyParamCaption})}
+
+
+
+Remove an item from the list at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & array list address to be treated \\
+\hline
+{\em position} & Position of the element to be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Return the deleted item 
+\end{DoxyReturn}

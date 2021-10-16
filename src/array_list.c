@@ -1,7 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file array_list.c
+ * @author Kubilay KAPLAN & Emile METRAL
+ * @brief functions for array list
+ * @version 0.1
+ * @date 2021-10-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,9 +14,9 @@
 
 
 /**
- * @brief Initialise la liste
+ * @brief initialize  array list
  * 
- * @param l liste à initialiser 
+ * @param l array list address to be treated
  */
 void init_array_list(Array_list *l){
     l->index = 0;
@@ -24,11 +29,11 @@ void init_array_list(Array_list *l){
 }
 
 /**
- * @brief Ajouter un élément à la liste à une position précise.
+ * @brief Insert value at a define position in array
  * 
- * @param l liste 
- * @param position Position de l'élément à ajouter
- * @param value Valeur à ajouter 
+ * @param l array list address to be treated
+ * @param position Position of the element to add
+ * @param value Value to add 
  */
 void insert_at(Array_list *l, int position, float value){
 
@@ -59,21 +64,21 @@ void insert_at(Array_list *l, int position, float value){
 }
 
 /**
- * @brief Ajouter une valeur à la fin de la liste 
+ * @brief Add a value at the end of the list
  * 
- * @param l liste 
- * @param value Valeur à ajouter
+ * @param l array list address to be treated 
+ * @param value Value to add
  */
 void add(Array_list *l, float value){
     l->data[l->index] = value;
     l->index ++;
 }
 /**
- * @brief Supprimer un élément à la liste à une position précise.
+ * @brief Remove an item from the list at a specific position.
  * 
- * @param l liste
- * @param position Position de l'élément à supprimer
- * @return float Renvoi l'élément supprimé
+ * @param l array list address to be treated
+ * @param position Position of the element to be deleted
+ * @return float Return the deleted item
  */
 float remove_at(Array_list *l, int position){
     float valueSuppr = 0.0;
@@ -110,11 +115,11 @@ float remove_at(Array_list *l, int position){
 }
 
 /**
- * @brief Retourner l'élément de la liste à la position n
+ * @brief Return the list item to position n
  * 
- * @param l Liste 
- * @param position Position de l'élément
- * @return float Retourne l'élément
+ * @param l array list address to be treated 
+ * @param position Element position
+ * @return float Returns the element
  */
 float get_at(Array_list *l,int position){
     float valueToGet = 0.0;
@@ -135,9 +140,9 @@ float get_at(Array_list *l,int position){
 }
 
 /**
- * @brief Supprime toutes les valeurs de la liste
+ * @brief Removes all values ​​from the list
  * 
- * @param l liste 
+ * @param l array list address to be treated
  */
 void clear_list(Array_list *l){
     do

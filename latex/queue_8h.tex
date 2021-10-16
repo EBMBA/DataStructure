@@ -1,0 +1,150 @@
+\hypertarget{queue_8h}{}\doxysection{include/queue.h File Reference}
+\label{queue_8h}\index{include/queue.h@{include/queue.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structQueue}{Queue}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{queue_8h_a4b56a6f23e044affca38eed1834e98dc}\label{queue_8h_a4b56a6f23e044affca38eed1834e98dc}} 
+\#define {\bfseries QUEUE\+\_\+\+MAX\+\_\+\+SIZE}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{queue_8h_a61df61ae1278dd46641315444ab00356}{init\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em initialize a new queue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_aee4cdc64e4fb038915201bb5f481dcc0}{enqueue}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$q, float value)
+\begin{DoxyCompactList}\small\item\em add value to queue \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{queue_8h_a963c35fdb8a91292169e3c65dfa6b56b}{dequeue}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em delete first value and return it \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{queue_8h_a813806bdcfc85411e001285c7607f3ef}{is\+\_\+queue\+\_\+empty}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em queue is empty or not \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{queue_8h_a0285b50c50dd0dcc29b712684d2569c7}{front}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em display the first queue value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{queue_8h_a119efee68b4d232dd411a5ca2ca3327b}{clear\+\_\+queue}} (\mbox{\hyperlink{structQueue}{Queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em clear queue \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Kubilay KAPLAN \& Emile METRAL 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/10-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{queue_8h_a119efee68b4d232dd411a5ca2ca3327b}\label{queue_8h_a119efee68b4d232dd411a5ca2ca3327b}} 
+\index{queue.h@{queue.h}!clear\_queue@{clear\_queue}}
+\index{clear\_queue@{clear\_queue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{clear\_queue()}{clear\_queue()}}
+{\footnotesize\ttfamily void clear\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+clear queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & queue address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_a963c35fdb8a91292169e3c65dfa6b56b}\label{queue_8h_a963c35fdb8a91292169e3c65dfa6b56b}} 
+\index{queue.h@{queue.h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily float dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+delete first value and return it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & queue address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float return deleted value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8h_aee4cdc64e4fb038915201bb5f481dcc0}\label{queue_8h_aee4cdc64e4fb038915201bb5f481dcc0}} 
+\index{queue.h@{queue.h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily void enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{q,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+add value to queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & queue address to be treated \\
+\hline
+{\em value} & value to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_a0285b50c50dd0dcc29b712684d2569c7}\label{queue_8h_a0285b50c50dd0dcc29b712684d2569c7}} 
+\index{queue.h@{queue.h}!front@{front}}
+\index{front@{front}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily float front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+display the first queue value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & queue address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{queue_8h_a61df61ae1278dd46641315444ab00356}\label{queue_8h_a61df61ae1278dd46641315444ab00356}} 
+\index{queue.h@{queue.h}!init\_queue@{init\_queue}}
+\index{init\_queue@{init\_queue}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{init\_queue()}{init\_queue()}}
+{\footnotesize\ttfamily void init\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+initialize a new queue 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \+: queue address to init \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{queue_8h_a813806bdcfc85411e001285c7607f3ef}\label{queue_8h_a813806bdcfc85411e001285c7607f3ef}} 
+\index{queue.h@{queue.h}!is\_queue\_empty@{is\_queue\_empty}}
+\index{is\_queue\_empty@{is\_queue\_empty}!queue.h@{queue.h}}
+\doxysubsubsection{\texorpdfstring{is\_queue\_empty()}{is\_queue\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+queue\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQueue}{Queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+queue is empty or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & queue address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true \+: queue is empty 
+
+false \+: queue is not empty 
+\end{DoxyReturn}

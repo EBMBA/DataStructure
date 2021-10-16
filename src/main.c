@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Kubilay KAPLAN & Emile METRAL
- * @brief 
+ * @brief main
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -32,7 +32,7 @@ int test_init(void)
 }
 
 /**
- * @brief 
+ * @brief function to test Stack dataStructure
  * 
  */
 void test_Stack(){
@@ -58,13 +58,16 @@ void test_Stack(){
     varStack = peek(&stackVar);
     CU_ASSERT(varStack == 5);
     
+    dup_stack(&stackVar);
+    CU_ASSERT(peek(&stackVar) == 5);
+    
     clear(&stackVar);
     CU_ASSERT(stackVar.index == 0);
 }
 
 
 /**
- * @brief test de la data structure queue
+ * @brief function to test Heap dataStructure
  * 
  */
 
@@ -97,7 +100,7 @@ void test_Queue(){
 }
 
 /**
- * @brief 
+ * @brief function to test Array List dataStructure
  * 
  */
 void test_Array_List(){
@@ -121,6 +124,10 @@ void test_Array_List(){
     CU_ASSERT(list.index == 0);
 } 
 
+/**
+ * @brief function to test Heap dataStructure
+ * 
+ */
 void test_Heap(){
     Heap heap;
     init_heap(&heap);
@@ -151,9 +158,9 @@ void test_Heap(){
 int main(int argc, char** argv) {  
     CU_initialize_registry();
     CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
-	//CU_add_test(suite, "test_list", test_Array_List);
-	//CU_add_test(suite, "test_Queue", test_Queue);
-	//CU_add_test(suite, "test_queue", test_Stack);
+	CU_add_test(suite, "test_list", test_Array_List);
+	CU_add_test(suite, "test_Queue", test_Queue);
+	CU_add_test(suite, "test_queue", test_Stack);
 	CU_add_test(suite, "test_heap", test_Heap);
 	CU_basic_run_tests();
 	return (0);

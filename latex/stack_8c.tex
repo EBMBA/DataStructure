@@ -1,0 +1,197 @@
+\hypertarget{stack_8c}{}\doxysection{src/stack.c File Reference}
+\label{stack_8c}\index{src/stack.c@{src/stack.c}}
+
+
+functions for stack  
+
+
+{\ttfamily \#include \char`\"{}../include/stack.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}{init\+\_\+stack}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em initialize new stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_abf5d30afcf64384fd5ea8c3caf3f9801}{push}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s, float value)
+\begin{DoxyCompactList}\small\item\em add a value to a stack \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stack_8c_a5976020301a8830c6541de1866c2891d}{pop}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em return and remove the last value of a stack \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{stack_8c_a18db937ce50647114171ae4b28676188}{is\+\_\+stack\+\_\+empty}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em test if a stack is empty or not \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{stack_8c_ac57a63c4c8774196cc2f12cf3b2ba24f}{peek}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em return the last value of a stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}{dump}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Remove the last value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a70c650dd8ec8e2e3d6e866e64eb0fb10}{dup\+\_\+stack}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em duplicate the last value of a stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_aa27246b3c1dec5924712f4bc1f325621}{swap}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em swap the last value with the before-\/last value of a stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stack_8c_a1713843976589f81f2d46bb02f92bb9d}{clear}} (\mbox{\hyperlink{structStack}{Stack}} $\ast$s)
+\begin{DoxyCompactList}\small\item\em clear \mbox{\hyperlink{structStack}{Stack}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+functions for stack 
+
+\begin{DoxyAuthor}{Author}
+Kubilay KAPLAN \& Emile METRAL 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2021-\/10-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2021 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stack_8c_a1713843976589f81f2d46bb02f92bb9d}\label{stack_8c_a1713843976589f81f2d46bb02f92bb9d}} 
+\index{stack.c@{stack.c}!clear@{clear}}
+\index{clear@{clear}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+clear \mbox{\hyperlink{structStack}{Stack}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}\label{stack_8c_a5956e1fd5023d42557f3e02dbbe011ac}} 
+\index{stack.c@{stack.c}!dump@{dump}}
+\index{dump@{dump}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Remove the last value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_a70c650dd8ec8e2e3d6e866e64eb0fb10}\label{stack_8c_a70c650dd8ec8e2e3d6e866e64eb0fb10}} 
+\index{stack.c@{stack.c}!dup\_stack@{dup\_stack}}
+\index{dup\_stack@{dup\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{dup\_stack()}{dup\_stack()}}
+{\footnotesize\ttfamily void dup\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+duplicate the last value of a stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}\label{stack_8c_ae9d651d70562e77fa39681ccc4993bbf}} 
+\index{stack.c@{stack.c}!init\_stack@{init\_stack}}
+\index{init\_stack@{init\_stack}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{init\_stack()}{init\_stack()}}
+{\footnotesize\ttfamily void init\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+initialize new stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_a18db937ce50647114171ae4b28676188}\label{stack_8c_a18db937ce50647114171ae4b28676188}} 
+\index{stack.c@{stack.c}!is\_stack\_empty@{is\_stack\_empty}}
+\index{is\_stack\_empty@{is\_stack\_empty}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{is\_stack\_empty()}{is\_stack\_empty()}}
+{\footnotesize\ttfamily bool is\+\_\+stack\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+test if a stack is empty or not 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true stack is empty 
+
+false stack is not empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_ac57a63c4c8774196cc2f12cf3b2ba24f}\label{stack_8c_ac57a63c4c8774196cc2f12cf3b2ba24f}} 
+\index{stack.c@{stack.c}!peek@{peek}}
+\index{peek@{peek}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily float peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+return the last value of a stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float last value of the stack 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_a5976020301a8830c6541de1866c2891d}\label{stack_8c_a5976020301a8830c6541de1866c2891d}} 
+\index{stack.c@{stack.c}!pop@{pop}}
+\index{pop@{pop}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily float pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+return and remove the last value of a stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the deleted value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{stack_8c_abf5d30afcf64384fd5ea8c3caf3f9801}\label{stack_8c_abf5d30afcf64384fd5ea8c3caf3f9801}} 
+\index{stack.c@{stack.c}!push@{push}}
+\index{push@{push}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+add a value to a stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+{\em value} & value to be added to the stack \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{stack_8c_aa27246b3c1dec5924712f4bc1f325621}\label{stack_8c_aa27246b3c1dec5924712f4bc1f325621}} 
+\index{stack.c@{stack.c}!swap@{swap}}
+\index{swap@{swap}!stack.c@{stack.c}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStack}{Stack}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+swap the last value with the before-\/last value of a stack 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \mbox{\hyperlink{structStack}{Stack}} address to be treated \\
+\hline
+\end{DoxyParams}

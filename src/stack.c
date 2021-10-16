@@ -1,15 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * @file stack.c
+ * @author Kubilay KAPLAN & Emile METRAL
+ * @brief functions for stack
+ * @version 0.1
+ * @date 2021-10-16
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 
 #include "../include/stack.h"
 
 /**
- * @brief Initialise la pile 
+ * @brief initialize new stack
  * 
- * @param s Pile à initialiser
+ * @param s Stack address to be treated
  */
 void init_stack(Stack *s){
     s->index = 0;
@@ -19,16 +24,22 @@ void init_stack(Stack *s){
     }   
 }
 
+/**
+ * @brief add a value to a stack
+ * 
+ * @param s Stack address to be treated
+ * @param value value to be added to the stack 
+ */
 void push(Stack *s, float value){
     s->data[s->index] = value;
     s->index ++;
 }
 
 /**
- * @brief Supprime la dernière valeur de la pile 
+ * @brief return and remove the last value of a stack
  * 
- * @param s Pile 
- * @return float Retourne la valeur supprimé 
+ * @param s Stack address to be treated
+ * @return float Returns the deleted value
  */
 float pop(Stack *s){
     float valRemove = 0.0;
@@ -47,11 +58,11 @@ float pop(Stack *s){
 }
 
 /**
- * @brief Retourne un booléen, true si la pile est vide 
+ * @brief test if a stack is empty or not
  * 
- * @param s Pile à traiter
- * @return true  pile vide 
- * @return false pile pas vide
+ * @param s Stack address to be treated
+ * @return true  stack is empty 
+ * @return false stack is not empty
  */
 bool is_stack_empty(Stack *s){
     bool empty = true;
@@ -65,10 +76,10 @@ bool is_stack_empty(Stack *s){
 }
 
 /**
- * @brief Renvoi le dernier 
+ * @brief return the last value of a stack
  * 
- * @param s Pile à traiter
- * @return float dernier élément de la pile 
+ * @param s Stack address to be treated
+ * @return float last value of the stack 
  */
 float peek(Stack *s){
     float lastElement = 0.0;
@@ -80,9 +91,9 @@ float peek(Stack *s){
 }
 
 /**
- * @brief Supprime le dernier élément 
+ * @brief Remove the last value 
  * 
- * @param s Pile à traiter 
+ * @param s Stack address to be treated 
  */
 void dump(Stack *s){
     if (s->index > 0)
@@ -96,9 +107,18 @@ void dump(Stack *s){
 }
 
 /**
- * @brief Echange le dernier et l'avant dernier 
+ * @brief duplicate the last value of a stack 
+ * @param s Stack address to be treated 
+ */
+void dup_stack(Stack *s){
+    push(s,peek(s));
+}
+
+
+/**
+ * @brief swap the last value with the before-last value of a stack 
  * 
- * @param s Pile à traiter 
+ * @param s Stack address to be treated 
  */
 void swap(Stack *s){
     if (s->index > 0)
@@ -110,9 +130,9 @@ void swap(Stack *s){
 }
 
 /**
- * @brief 
+ * @brief clear Stack
  * 
- * @param s 
+ * @param s Stack address to be treated
  */
 void clear(Stack *s){
     do

@@ -1,7 +1,7 @@
 /**
  * @file heap.c
  * @author Kubilay KAPLAN & Emile METRAL
- * @brief 
+ * @brief functions for heap
  * @version 0.1
  * @date 2021-10-15
  * 
@@ -15,9 +15,9 @@
 #include "../include/heap.h"
 
 /**
- * @brief 
+ * @brief initialize a new heap
  * 
- * @param h 
+ * @param h  Heap address to initialized
  */
 void init_heap(Heap *h){
     h->index = 0;
@@ -29,11 +29,11 @@ void init_heap(Heap *h){
 }
 
 /**
- * @brief 
+ * @brief test if heap is empty or not
  * 
- * @param h 
- * @return true 
- * @return false 
+ * @param h Heap address to be treated
+ * @return heap is empty
+ * @return heap is not empty
  */
 bool is_heap_empty(Heap *h){
     return h->index == 0;
@@ -71,11 +71,11 @@ int getRightChildIndex(int parentIndex){
 }
 
 /**
- * @brief Echange deux valeurs dans le tas
+ * @brief Swap two values ​​in the heap
  * 
- * @param h Tableau 
- * @param index1 Valeur a echanger
- * @param index2 Valeur a echanger
+ * @param h Table
+ * @param index1 Value to be exchanged
+ * @param index2 Value to be exchanged
  */
 void swap_heap(Heap *h, int index1, int index2){
     float temp = h->data[index1];
@@ -84,9 +84,9 @@ void swap_heap(Heap *h, int index1, int index2){
 }
 
 /**
- * @brief Reorganise en partant par la fin
+ * @brief Rearrange starting from the end
  * 
- * @param h 
+ * @param h Heap adressto be treated
  */
 void heapifyUp(Heap *h){
     int index = h->index - 1;
@@ -98,9 +98,9 @@ void heapifyUp(Heap *h){
 }
 
 /**
- * @brief Reorganise en partant du debut
+ * @brief Reorganized from the beginning
  * 
- * @param h 
+ * @param h Heap adress to be treated
  */
 void heapifyDown(Heap *h){
     int index  = 0;
@@ -130,10 +130,10 @@ void heapifyDown(Heap *h){
 }
 
 /**
- * @brief supprime le premier element 
+ * @brief remove the first element
  * 
- * @param h 
- * @return float : element supprimer
+ * @param h Heap adress to be treated
+ * @return float : element deleted
  */
 float pop_heap(Heap *h){
     float items = 0.0;
@@ -157,10 +157,10 @@ float pop_heap(Heap *h){
 }
 
 /**
- * @brief ajoute une valeur
+ * @brief add value
  * 
- * @param h 
- * @param value 
+ * @param h Heap adress to be treated
+ * @param value value to be added to the heap
  */
 void push_heap(Heap *h, float value){
     int index = h->index;
@@ -171,10 +171,10 @@ void push_heap(Heap *h, float value){
 }
 
 /**
- * @brief supprime la premiere valeur et en ajoute une autre
+ * @brief return the first value of a heap and replace it by a new value
  * 
- * @param h 
- * @param value 
+ * @param h Heap adress to be treated
+ * @param value replaced value
  * @return float 
  */
 float replace(Heap *h, float value){
@@ -184,9 +184,9 @@ float replace(Heap *h, float value){
 }
 
 /**
- * @brief retourne la premiere valeur 
+ * @brief return the first value of heap
  * 
- * @param h 
+ * @param h Heap adress to be treated
  * @return float 
  */
 float peek_heap(Heap *h){
@@ -194,9 +194,9 @@ float peek_heap(Heap *h){
 }
 
 /**
- * @brief 
+ * @brief clear heap
  * 
- * @param h 
+ * @param h Heap adress to be treated
  */
 void clear_heap(Heap *h){
     init_heap(h);

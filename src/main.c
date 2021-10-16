@@ -156,6 +156,7 @@ int main(int argc, char** argv) {
 	//CU_add_test(suite, "test_queue", test_Stack);
 	CU_add_test(suite, "test_heap", test_Heap);
 	CU_basic_run_tests();
+	return (0);
 
     // test_Heap();
    

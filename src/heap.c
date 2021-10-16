@@ -22,10 +22,10 @@
 void init_heap(Heap *h){
     h->index = 0;
     
-    /*for (int i = 0; i < HEAP_MAX_SIZE ; i++)
+    for (int i = 0; i < HEAP_MAX_SIZE ; i++)
     {
         h->data[i] = 0.0;     
-    }*/
+    }
 }
 
 /**
@@ -108,10 +108,12 @@ void heapifyDown(Heap *h){
     while (getLeftChildIndex(index) < h->index)
     {
         int smallerChildIndex = getLeftChildIndex(index);
+        int rightChildIndex = getRightChildIndex(index);
+        int leftChildIndex = getLeftChildIndex(index);
 
-        if (getRightChildIndex < h->index && h->data[getRightChildIndex(index)] < h->data[getLeftChildIndex(index)])
+        if ( rightChildIndex < h->index && h->data[rightChildIndex] < h->data[leftChildIndex])
         {
-            smallerChildIndex = getRightChildIndex(index);
+            smallerChildIndex = rightChildIndex;
         }
 
         if (h->data[index] < h->data[smallerChildIndex])
@@ -141,8 +143,13 @@ float pop_heap(Heap *h){
     }
     else{
         items = h->data[0];
-        h->data[0] = h->data[h->index-1] ;
+        // printf(" %d in function %f \n",h->index, items);
+        int index = (h->index)-1 ;
+        // printf(" %d in function index -1\n",index);
+        h->data[0] = h->data[index] ;
+        // printf(" %d in function %f \n",h->index, h->data[0]);
         h->index --;
+        // printf(" %d in function %f \n",h->index, h->data[0]);
         heapifyDown(h);
     }
 
@@ -156,8 +163,9 @@ float pop_heap(Heap *h){
  * @param value 
  */
 void push_heap(Heap *h, float value){
-    h->data[h->index] = value;
-    printf(" %d in function %f ",h->index, h->data[h->index]);
+    int index = h->index;
+    h->data[index] = value;
+    //printf(" %d in function %f ",h->index, h->data[h->index]);
     h->index++;
     heapifyUp(h);
 }
@@ -171,7 +179,7 @@ void push_heap(Heap *h, float value){
  */
 float replace(Heap *h, float value){
     float itemsRemoved = pop_heap(h);
-    push(h,value);
+    push_heap(h,value);
     return itemsRemoved;
 }
 

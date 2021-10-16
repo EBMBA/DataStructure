@@ -124,53 +124,39 @@ void test_Array_List(){
 void test_Heap(){
     Heap heap;
     init_heap(&heap);
-    //CU_ASSERT(heap.index == 0);
+    CU_ASSERT(heap.index == 0);
 
     push_heap(&heap, 5);
-    
-    
-    //CU_ASSERT(heap.data[0] == 5);    
+    CU_ASSERT(heap.data[0] == 5);    
     push_heap(&heap, 25.0);
     push_heap(&heap, 18.0);
-    push_heap(&heap, (float)2);
-    heap.data[0]=5;
-    for (int i = 0; i < heap.index; i++)
-    {
-        printf(" %f \n",heap.data[i]);
-    }
+    push_heap(&heap, 2);
+    push_heap(&heap, 8);
+    //heap.data[0]=5;
 
     float popedVar = pop_heap(&heap);
-    //CU_ASSERT(popedVar == 5);
+    CU_ASSERT(popedVar == 2);
+    CU_ASSERT(peek_heap(&heap) == 5 );
 
-    //CU_ASSERT(peek_heap(&heap) == 2 );
+    CU_ASSERT(is_heap_empty(&heap) == false);
 
-    //CU_ASSERT(is_heap_empty(&heap) == false);
+    CU_ASSERT(replace(&heap, 1) == 5);
+    CU_ASSERT(peek_heap(&heap) == 1 );
 
-    //CU_ASSERT(replace(&heap, 5) == 2);
-    //CU_ASSERT(peek_heap(&heap) == 2 );
-    
     clear_heap(&heap);
-    //CU_ASSERT(heap.index == 0);
+    CU_ASSERT(heap.index == 0);
     //8 tests
-    /*
-        1. src/main.c:130  - heap.data[0] == 5
-    2. src/main.c:136  - popedVar == 5
-    3. src/main.c:138  - peek_heap(&heap) == 2
-    4. src/main.c:142  - replace(&heap, 5) == 2
-    5. src/main.c:143  - peek_heap(&heap) == 2
-    */
 }
 
 int main(int argc, char** argv) {  
-   //test_Queue();
-    //CU_initialize_registry();
-	//CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
+    CU_initialize_registry();
+    CU_pSuite *suite = CU_add_suite("test", test_init, test_cleanup);
 	//CU_add_test(suite, "test_list", test_Array_List);
 	//CU_add_test(suite, "test_Queue", test_Queue);
 	//CU_add_test(suite, "test_queue", test_Stack);
-	//CU_add_test(suite, "test_heap", test_Heap);
-	//CU_basic_run_tests();
+	CU_add_test(suite, "test_heap", test_Heap);
+	CU_basic_run_tests();
 
-    test_Heap();
+    // test_Heap();
    
 }

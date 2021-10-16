@@ -59,7 +59,11 @@ void test_Stack(){
     CU_ASSERT(varStack == 5);
     
     dup_stack(&stackVar);
-    CU_ASSERT(peek(&stackVar) == 5);
+    float dernier = stackVar.data[stackVar.index-1];
+    float avantDernier = stackVar.data[stackVar.index-2];
+    CU_ASSERT( dernier == 5.00);
+    CU_ASSERT(avantDernier == 5.00);
+
     
     clear(&stackVar);
     CU_ASSERT(stackVar.index == 0);
@@ -67,7 +71,7 @@ void test_Stack(){
 
 
 /**
- * @brief function to test Heap dataStructure
+ * @brief function to test queue dataStructure
  * 
  */
 

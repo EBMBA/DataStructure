@@ -112,7 +112,6 @@ void dump(Stack *s){
  */
 void dup_stack(Stack *s){
     push(s,peek(s));
-    s->index++;
 }
 
 
